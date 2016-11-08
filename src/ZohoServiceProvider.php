@@ -2,7 +2,7 @@
 
 namespace Organit\Zoho;
 
-
+use Organit\Zoho\Zoho;
 use Illuminate\Support\ServiceProvider;
 
 class ZohoServiceProvider extends ServiceProvider
