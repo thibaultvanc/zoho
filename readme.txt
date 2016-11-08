@@ -17,5 +17,8 @@
                 }
             },
             ...
-7 - composer dump-autoload
+7 - composer dump-autoload from main directory
 8 Ajouter le serviceprovider dans config/app : Organit\Zoho\ZohoServiceProvider::class,
+9 - cd Packages/Organit/Zoho > git init
+
+10 - recuperer l'url de github pour la coller dans packagist
