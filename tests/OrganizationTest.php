@@ -1,30 +1,47 @@
 <?php
 
-// use Illuminate\Foundation\Testing\WithoutMiddleware;
-// use Illuminate\Foundation\Testing\DatabaseMigrations;
-// use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 
 namespace {
-    // use Kris\LaravelFormBuilder\Events\AfterFieldCreation;
-    // use Kris\LaravelFormBuilder\Events\AfterFormCreation;
-    // use Kris\LaravelFormBuilder\Form;
-    // use Kris\LaravelFormBuilder\FormBuilder;
-    // use Kris\LaravelFormBuilder\FormHelper;
-    use TestCase;
-    use Organit\Zoho;
+  use Organit\Zoho\Zoho;
+  use Organit\Zoho\Organization;
 
 
 
 
-    class OrganizationTest extends TestCase
+  class OrganizationTest extends TestCase
+  {
+    /** @test */
+    public function it_fetch_organization_list()
     {
-        /** @test */
-        public function it_fetch_organization_list()
-        {
 
-            $this->assertNull(null);
-        }
+      Auth::loginUsingId(1);
+
+      $firstOrg = Zoho::organization()->get();
+
+      $this->assertTrue(count($firstOrg)>0);
+
     }
+
+
+
+
+    /** @test */
+    public function it_fetch_organization_object()
+    {
+
+      Auth::loginUsingId(1);
+
+      $org = Zoho::organization()->getByID('634457325');
+
+      $this->assertTrue($org->organization_id=='634457325');
+
+    }
+
+
+
+
+
+  }
 
 }

@@ -15,6 +15,11 @@ class ZohoServiceProvider extends ServiceProvider
   {
     include __DIR__ . '/routes.php';
     $this->loadViewsFrom(__DIR__ . '/Views', 'view');
+
+
+    // $this->publishes([
+    //     __DIR__ . '/Config' => base_path('config/')
+    // ]);
   }
 
 
