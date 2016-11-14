@@ -11,13 +11,31 @@
 phpunit --test-suffix ContactTest.php
 phpunit --filter it_fetch_the_invoices_for_a_given_contact
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+
+
+##istallation
+  composer require organit/zoho
+
+app/config
+  App\Providers\RouteServiceProvider::class,
+
+## usage
+
+  Zoho::organization()->get()
+
+  --
+
+
+  $PICAFLOR = Zoho::organization()->init('84525121'); //organization_id
+  $contacts = $PICAFLOR->contacts()->index()['data'];
+
+
+
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Organit
 
 ## Security Vulnerabilities
 
@@ -53,6 +71,17 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 10 - recuperer l'url de github pour la coller dans packagist
 11 - creer le repo sur packagist
         + add webhook
+
+
+
+crrer version Tag
+git tag -a 1.0.0 -m "first version"
+git push --tags
+
+
+
+
+
 
 tests - phpunit
 12 - add this to phpunit.xml
