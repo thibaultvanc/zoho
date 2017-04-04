@@ -25,7 +25,7 @@ class ZohoServiceProvider extends ServiceProvider
 
   public function register()
   {
-      $this->app['zoho'] = $this->app->share(function($app){
+      $this->app['zoho'] = $this->app->singleton(function($app){
         return new Zoho;
       });
 
